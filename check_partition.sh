@@ -5,6 +5,7 @@
 #       Author: NOKIA Core Support
 #       Date: 14-02-2021
 #       Purpose: check OS Partition status
+#       author: Ahmed Bebars, +201024614238
 #
 #
 #------------------------------------------------------------------------
