@@ -22,7 +22,7 @@ def func_connect(ip,hostname,user,password):
 	try:
         	ssh.connect(ip, username=user, password=password)
 	except paramiko.SSHException:
-                log_file.write (currentDT+"  "+"Connection Failed")
+                result_file.write (currentDT+"  "+"Connection Failed")
 		quit()
 
 	stdin,stdout,stderr = ssh.exec_command("df -h | grep global")
