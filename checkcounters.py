@@ -17,12 +17,12 @@ for file in arr:
     tree = ET.parse(file)
     root = tree.getroot()
     count = 0
-    for form in root.findall("./PMSetup/PMMOResult/MO/DN"):
-        match = re.match("PLMN-PLMN\/MRBTS-[0-9]*\/LNBTS-[0-9]*$",form.text)
+    for DN in root.findall("./PMSetup/PMMOResult/MO/DN"):
+        match = re.match("PLMN-PLMN\/MRBTS-[0-9]*\/LNBTS-[0-9]*$",DN.text)
         if match and count == 0:
             count+=1
             #print(form.text)
-            result_file.write(form.text+"\n")
+            result_file.write(DN.text+"\n")
     for child in root.iter():
         #print(child.tag, child.attrib)
         if len(child.attrib) == 2:
