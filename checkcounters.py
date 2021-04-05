@@ -34,7 +34,7 @@ for file in arr:
             #print (child.attrib)
             json_str = json.dumps(child.attrib)
             resp = json.loads(json_str)
-            if interval == "15":
+            if interval == "15" and resp['measurementType'] != "LTE_Sales_Item_Monitoring" and resp['measurementType'] != "IP_Data_Traffic_Volume_stats":
                 #print("interval:"+interval+","+"Measurement:"+resp['measurementType'])
                 result_file.write("interval:"+interval+","+"Measurement:"+resp['measurementType']+"\n")
 
